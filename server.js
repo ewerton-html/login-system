@@ -13,12 +13,8 @@ app.use(express.static(__dirname + '/public'))
 app.set('/views', path.join(__dirname, 'views'))
 
 
-// const router = require('./src/router/router');
-// app.use('/', router);
-
-app.get('/', (req, res)=>{
-    res.render('pages/home');
-})
+const router = require('./router/useRouter');
+app.use('/', router);
 
 app.listen(port, ()=>{
     console.log('o servidor está rodando');
